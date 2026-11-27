@@ -18,3 +18,21 @@
 - **Git 提交**：`1569c5b docs: record shell port check script task and archive conversation`
 
 ---
+
+## [2026-11-27 20:31] 研究公网 IP 124.160.107.92
+
+- **需求/问题描述**：
+  > 研究这个IP124.160.107.92
+
+- **实际实现的功能与改动**：
+  - 归属与注册核查：通过 APNIC WHOIS、APNIC RDAP、IPinfo 与 ip-api 核实该 IP 属于中国联通浙江分公司（杭州滨江，`AS4837`），精确分配子网为 `124.160.107.88/29`（`CESHIHZ`，2010-09-08 注册），并核对相邻子网 `.80/29` 与 `.96/30` 的登记信息。
+  - 路由与安全信誉核查：通过 RIPEstat 验证 `124.160.0.0/16` 在 `AS4837` 下的 BGP 可见性（321/322）与 RPKI ROA 状态（`valid`）；通过 Cloudflare DoH、HackerTarget、Shodan InternetDB、GreyNoise Community 与 DNSBL（SpamCop、Barracuda）完成反向解析、历史域名 `shaobo.tech` 现行状态、子网暴露面及安全信誉核查。
+  - 实时连通性验证：执行 ICMP ping（3 次全超时）及 80/443 端口 HTTP/HTTPS 请求（均 5 秒超时），确认当前无常规公开 Web 响应。
+
+- **涉及文件**：
+  - `docs/CHANGELOG.md` (+18 / -0)
+  - `context/2026/11/27/20-31-00/对话.md` (+52 / -0)
+
+- **Git 提交**：待提交
+
+---
