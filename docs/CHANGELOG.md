@@ -50,6 +50,6 @@
   - `docs/CHANGELOG.md` (+17 / -0)
   - `context/2026/11/28/08-42-12/对话.md` (+68 / -0)
 
-- **Git 提交**：待提交
+- **Git 提交**：`c901725 docs: record Luogu P5729 explanation and archive conversation`
 
 ---
