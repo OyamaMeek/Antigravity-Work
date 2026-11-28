@@ -67,6 +67,6 @@
   - `docs/CHANGELOG.md` (+17 / -0)
   - `context/2026/11/28/16-18-35/对话.md` (+32 / -0)
 
-- **Git 提交**：待提交
+- **Git 提交**：`d167321 docs: record docker buildx troubleshooting and archive conversation`
 
 ---
