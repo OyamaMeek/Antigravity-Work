@@ -53,3 +53,20 @@
 - **Git 提交**：`c901725 docs: record Luogu P5729 explanation and archive conversation`
 
 ---
+
+## [2026-11-28 16:18] 排查 Docker Compose 构建缺少 Buildx 报错
+
+- **需求/问题描述**：
+  > 附终端截图：在服务器手动安装新版 `docker-compose` 插件后执行 `docker compose up -d --build`，报错 `compose build requires buildx 0.17.0 or later`。
+
+- **实际实现的功能与改动**：
+  - 报错原因定位与修复方案：核实 `docker/buildx` GitHub Releases 资产命名规则（按 `amd64`/`arm64` 与版本号拼接），给出下载最新版 `docker-buildx` 插件到 `/usr/local/lib/docker/cli-plugins/docker-buildx`、赋权、检查 `docker buildx version` 及重新执行 `docker compose up -d --build` 的命令，并补充 `/root/.docker/cli-plugins/docker-buildx` 优先级覆盖排查说明。
+  - 验证范围说明：本机未连接用户目标服务器，未在远程主机实际执行上述安装与构建命令。
+
+- **涉及文件**：
+  - `docs/CHANGELOG.md` (+17 / -0)
+  - `context/2026/11/28/16-18-35/对话.md` (+32 / -0)
+
+- **Git 提交**：待提交
+
+---
